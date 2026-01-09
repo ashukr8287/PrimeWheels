@@ -10,7 +10,7 @@ function VehicleCard({ item }) {
             <img src={item.images} alt="" className="rounded-t-2xl  transition-transform duration-300 hover:scale-110" />
           </div>
           <div className="px-4">
-            <h3 className=" font-jost font-semibold py-3 text-lg">
+            <h3 className=" font-jost font-semibold pt-3 pb-2 text-lg">
               {item.title.length > 25
                 ? `${item.title.trim().slice(0, 25)}...`
                 : item.title}
