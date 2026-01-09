@@ -5,7 +5,7 @@ import VehicleCard from "../CommonComp/VehicleCard.jsx";
 function VehicleSlide() {
   const vehicles = VehicLeslist.slice(0, 4);
   return (
-    <section className="w-full bg-[#F9F9F9] ">
+    <section className="w-full bg-white ">
       <div className="max-w-7xl mx-auto px-4 py-10">
         <header className="max-w-2xl mx-auto">
           <p className="text-[#B71C1C] text-lg text-center font-bold">
