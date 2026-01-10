@@ -2,7 +2,7 @@ import React from 'react'
 
 function VehicleImageList({vehicle}) {
   return (
-    <div>
+    <div className=''>
         <img src={vehicle.images} alt="" className='rounded-2xl' />
     </div>
   )

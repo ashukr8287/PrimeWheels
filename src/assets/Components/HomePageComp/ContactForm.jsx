@@ -15,7 +15,7 @@ function ContactForm() {
 
         <main className="max-w-6xl mx-auto md:flex justify-between items-start gap-x-20">
           {/* <!-- Contact Information --> */}
-          <section className="md:w-1/2 md:pr-20 bg-gray-100 rounded-3xl p-10">
+          <section className="md:w-1/2 md:pr-20 bg-gray-100 rounded-3xl sm:p-6 p-4">
             <h2 className="font-bold text-lg mb-4">Contact Information</h2>
 
             <ul className="text-sm">

@@ -4,7 +4,7 @@ import ImageMob from "../../Images/HeroSectionMobImg.jpg";
 
 function HeroSection() {
   return (
-    <div className="relative lg:h-[90vh] h-[70vh] lg:mt-18 mt-14">
+    <div className="relative lg:h-[90vh] h-[70vh]">
       {/* Desktop Image */}
       <img
         src={imageDesk}
