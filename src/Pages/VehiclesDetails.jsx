@@ -7,7 +7,6 @@ import VehicleImageList from "../assets/Components/VehicleDatailsComp/VehicleIma
 import Vehicleinfo from "../assets/Components/VehicleDatailsComp/Vehicleinfo";
 import Cardeals from "../assets/Components/VehicleDatailsComp/Cardeals";
 import AboutTheCar from "../assets/Components/VehicleDatailsComp/AboutTheCar";
-import QualityReport from "../assets/Components/VehicleDatailsComp/QualityReport";
 import EMICalculator from "../assets/Components/VehicleDatailsComp/EMICalculator";
 import Benefits from "../assets/Components/VehicleDatailsComp/Benefits";
 
@@ -49,7 +48,6 @@ function VehicleDetails() {
               <div>
                 <Cardeals vehicle={vehicle} />
                 <AboutTheCar vehicle={vehicle} />
-                <QualityReport vehicle={vehicle} />
                 <EMICalculator vehicle={vehicle} />
                 <Benefits vehicle={vehicle} />
               </div>

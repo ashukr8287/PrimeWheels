@@ -51,6 +51,7 @@ function CustomerReview() {
               <div
                 className="bg-white lg:m-5 md:m-3 my-2  rounded-2xl p-4 shadow cursor-pointer"
                 onClick={() => setid(item.id)}
+                key={item.id}
               >
                 <h3 className="font-semibold text-xl py-4 ">{item.title}</h3>
                 <p className="font- text-base py-4 border-b border-b-black text-black hover:text-[#b71c1c] ">

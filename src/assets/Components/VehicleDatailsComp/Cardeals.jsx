@@ -4,7 +4,7 @@ function Cardeals({ vehicle }) {
   return (
     <section className="bg-white p-4 my-4 rounded-xl">
       <div>
-        <div className="text-2xl font-bold text-black my-3">Car Detail</div>
+        <div className="text-xl font-bold text-black my-3">Car Detail</div>
       <div className="flex"><h3 className="bg-[#B71C1C] w-12 h-1 mr-4 "></h3> <h3 className="bg-[#B71C1C] w-4 h-1 "></h3></div>
       </div>
       <div>

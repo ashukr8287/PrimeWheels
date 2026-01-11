@@ -37,7 +37,7 @@ function Vehicleinfo({ vehicle }) {
       </div>
       <div className="text-xs my-4 flex items-center gap-x-2  ">
         <span className="bg-[#F3F4F6] rounded-sm p-2 ">
-          {vehicle.drivenKm} km
+          {Number(vehicle.drivenKm).toLocaleString("en-IN")} km
         </span>
         <span className="bg-[#F3F4F6] rounded-sm p-2 ">{vehicle.fuel}</span>
         <span className="bg-[#F3F4F6] rounded-sm p-2">
@@ -55,7 +55,7 @@ function Vehicleinfo({ vehicle }) {
         <div className="flex items-center justify-between bg-[#EFEFEF] p-3 rounded-b-2xl text-sm">
           <div className="text-[#B71C1C] font-semibold text-xs">
             Starting EMI :- <br />
-            ₹ {Number(vehicle.price).toLocaleString("en-IN")}
+            ₹ {Number((vehicle.price / 36).toFixed(0)).toLocaleString("en-IN")} /m
           </div>
           <button className="bg-[#B71C1C]   px-4 py-2 border-none rounded-md  cursor-pointer text-white hover:animate-pulse ">
             Calculate EMI
