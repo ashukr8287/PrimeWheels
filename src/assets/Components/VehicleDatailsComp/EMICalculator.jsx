@@ -80,9 +80,7 @@ function EMICalculator({ vehicle }) {
           <div>
             <div className="flex justify-between mb-4 text-sm font-semibold">
               <span className="text-gray-500">Interest Rate (P.A.):</span>
-              <span className="text-gray-900 text-base">
-                {interestRate}%
-              </span>
+              <span className="text-gray-900 text-base">{interestRate}%</span>
             </div>
             <input
               type="range"
@@ -116,9 +114,7 @@ function EMICalculator({ vehicle }) {
 
           {/* EMI Box */}
           <div className="bg-[#FFF5F5] border border-red-100 rounded-xl p-6">
-            <p className="text-[#EF4444] text-xs font-bold mb-1">
-              Monthly EMI
-            </p>
+            <p className="text-[#EF4444] text-xs font-bold mb-1">Monthly EMI</p>
             <h3 className="text-2xl font-semibold text-[#B71C1C]">
               ₹{emi.toLocaleString("en-IN")}
             </h3>
@@ -128,28 +124,27 @@ function EMICalculator({ vehicle }) {
         {/* Chart Section */}
         <div className="flex flex-col items-center">
           {/* IMPORTANT: hidden first, then lg:block */}
-       <div className="w-full relative border-none hidden lg:block">
-  <ResponsiveContainer width="100%" aspect={2}>
-    <PieChart>
-      <Pie
-        data={data}
-        cx="50%"
-        cy="100%"
-        startAngle={180}
-        endAngle={0}
-        innerRadius={80}
-        outerRadius={120}
-        dataKey="value"
-        stroke="none"
-      >
-        {data.map((_, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index]} />
-        ))}
-      </Pie>
-    </PieChart>
-  </ResponsiveContainer>
-</div>
-
+          <div className="w-full relative border-none hidden lg:block">
+            <ResponsiveContainer width="100%" aspect={2}>
+              <PieChart>
+                <Pie
+                  data={data}
+                  cx="50%"
+                  cy="100%"
+                  startAngle={180}
+                  endAngle={0}
+                  innerRadius={80}
+                  outerRadius={120}
+                  dataKey="value"
+                  stroke="none"
+                >
+                  {data.map((_, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index]} />
+                  ))}
+                </Pie>
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
 
           {/* Breakdown */}
           <div className="w-full space-y-4 mt-6">
