@@ -18,7 +18,7 @@ function CustomerReview() {
             What our happy clients say about us{" "}
           </p>
           <h1 className="text-center font-bold text-3xl  md:mb-8 mb-4">
-            Our Testimonials
+            User Reviews & Ratings
           </h1>
         </header>
 

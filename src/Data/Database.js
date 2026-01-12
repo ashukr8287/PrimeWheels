@@ -129,7 +129,7 @@ export const VehicLeslist = [
     price: 1675000,
     priceLabel: "₹16.75 Lakhs",
     images: [
-      "https://elitecarz.in/public/uploads/cars/featured_image/25/10/1759817292-featured_image.jpg"
+      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Mahindra/XUV700/10794/1762509966753/front-view-118.jpg"
     ]
   },
   {
@@ -148,7 +148,7 @@ export const VehicLeslist = [
     price: 1080000,
     priceLabel: "₹10.8 Lakhs",
     images: [
-      "https://elitecarz.in/public/uploads/cars/featured_image/25/10/1759817292-featured_image.jpg"
+      "https://www.carbike360.com/_next/image?url=https%3A%2F%2Fs3.ap-south-1.amazonaws.com%2Fcb360static%2Fuploads%2Fee372943-c382-496f-b433-9a74e3528a4f-thumbnail-1000111378.avif&w=3840&q=75.jpg"
     ]
   },
   {
@@ -167,7 +167,7 @@ export const VehicLeslist = [
     price: 1450000,
     priceLabel: "₹14.5 Lakhs",
     images: [
-      "https://elitecarz.in/public/uploads/cars/featured_image/25/10/1759817292-featured_image.jpg"
+      "https://media.zigcdn.com/media/model/2025/Jul/model-extimg-2092421029_930x620.jpg"
     ]
   },
   {
@@ -186,7 +186,7 @@ export const VehicLeslist = [
     price: 650000,
     priceLabel: "₹6.5 Lakhs",
     images: [
-      "https://elitecarz.in/public/uploads/cars/featured_image/25/10/1759817292-featured_image.jpg"
+      "https://images10.gaadi.com/usedcar_image/5055617/original/processed_13a4c8f0-d661-4030-8fa5-81e54482032a.jpg?imwidth=320.jpg"
     ]
   },
   {

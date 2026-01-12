@@ -1,13 +1,18 @@
 import React from "react";
 import { IoCallOutline, IoSearch } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 function Navbar() {
+   const handleCall = () => {
+    window.location.href = "tel:+918700858446";
+  };
+  const Navigate=useNavigate()
   return (
     <>
       <nav className="bg-black text-white fixed top-0 w-full z-100">
         <div className="max-w-7xl mx-auto lg:px-8 px-2">
           <div className="w-full flex justify-between items-center py-4 px-2">
             {/* Name || Logo */}
-            <div className="lg:text-2xl md:text-3xl text-1xl font-bold uppercase font-poppins  cursor-pointer">
+            <div className="lg:text-2xl md:text-3xl text-1xl font-bold uppercase font-poppins  cursor-pointer" onClick={()=>Navigate("/")}>
               PrimeWheels
             </div>
             {/* Search || Section */}
@@ -21,16 +26,16 @@ function Navbar() {
             </div>
             {/* Buttons */}
             <div className=" md:gap-x-4 gap-x-3 flex">
-              <button className="bg-[#B71C1C] md:px-4 px-2  md:py-2 py-1 border-none rounded-sm cursor-pointer md:text-base text-sm">
+              <button className="bg-[#B71C1C] md:px-4 px-2  md:py-2 py-1 border-none rounded-sm cursor-pointer md:text-base text-sm " onClick={()=>Navigate("/cars")}>
                 Buy a Car
               </button>
-              <button className="bg-[#B71C1C] md:px-4 px-2 md:py-2 py-1 border-none rounded-sm cursor-pointer md:text-base text-sm">
+              <button className="bg-[#B71C1C] md:px-4 px-2 md:py-2 py-1 border-none rounded-sm cursor-pointer md:text-base text-sm" onClick={()=>Navigate("/sell")}>
                 Sell a Car
               </button>
               <div className="bg-[#B71C1C] items-center p-2 rounded-full text-2xl cursor-pointer md:block hidden">
-                <IoCallOutline />
+                <IoCallOutline onClick={handleCall}  />
               </div>
-              <div className="cursor-pointer lg:block hidden">
+              <div className="cursor-pointer lg:block hidden" onClick={handleCall} >
                 <span className="block text-xs">Dial Our Helpline:</span>
                 <span className="block font-bold"> +91- 8700858446</span>
               </div>

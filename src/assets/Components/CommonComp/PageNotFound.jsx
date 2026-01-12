@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function PageNotFound() {
     const navigate=useNavigate()
   return (
-    <section className="bg-[#F3F3F3] mt-18 w-full h-[82vh] content-center overflow-hidden">
+    <section className="bg-[#F3F3F3]  w-full h-[82vh] content-center overflow-hidden">
       <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-8xl font-bold animate-pulse">404</h1>
         <i className="text-4xl text-[#b71c1c]">OOPS!</i>

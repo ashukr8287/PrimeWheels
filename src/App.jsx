@@ -8,6 +8,7 @@ import PageTitle from "./assets/Components/CommonComp/PageTitle";
 import VehiclesDetails from "./Pages/VehiclesDetails";
 import ScrollToTop from "./assets/Components/CommonComp/ScrollToTop";
 import PageNotFound from "./assets/Components/CommonComp/PageNotFound";
+import SellCar from "./Pages/SellCar";
 
 
 function App() {
@@ -18,8 +19,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cars" element={<Cars/>}/>
+        {/* <Route path="/cars" element={<Cars/>}/> */}
         <Route path="/vehicle/:id" element={<VehiclesDetails />} />
+        <Route path="/sell" element={<SellCar />} />
         <Route path="*" element={<PageNotFound/>}/>
 
       </Routes>
