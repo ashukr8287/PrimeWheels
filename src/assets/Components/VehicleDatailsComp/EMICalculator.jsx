@@ -8,10 +8,10 @@ function EMICalculator({ vehicle }) {
     : 1000000;
 
   const [loanAmount, setLoanAmount] = useState(initialLoan);
-  const [interestRate, setInterestRate] = useState(10); // Default 10% interest
+  const [interestRate, setInterestRate] = useState(10);
   const [tenure, setTenure] = useState(4);
 
-  // Logic: Principal is now direct loan amount
+  // EMI logic
   const principal = loanAmount;
   const months = tenure * 12;
   const monthlyRate = interestRate / 100 / 12;
@@ -40,6 +40,7 @@ function EMICalculator({ vehicle }) {
 
   return (
     <section className="bg-white p-6 my-4 rounded-xl shadow-sm border border-gray-100 font-sans">
+      {/* Header */}
       <div className="mb-8">
         <h2 className="text-xl font-bold text-gray-800">EMI Calculator</h2>
         <div className="flex gap-1 mt-1">
@@ -49,8 +50,9 @@ function EMICalculator({ vehicle }) {
       </div>
 
       <div className="grid md:grid-cols-2 md:gap-8 gap-4">
+        {/* Sliders Section */}
         <div className="space-y-10">
-          {/* Loan Amount Slider */}
+          {/* Loan Amount */}
           <div>
             <div className="flex justify-between mb-4 text-sm font-semibold">
               <span className="text-gray-500">Loan Amount:</span>
@@ -65,12 +67,16 @@ function EMICalculator({ vehicle }) {
               step="10000"
               value={loanAmount}
               onChange={(e) => setLoanAmount(+e.target.value)}
-              style={getBackgroundSize(loanAmount, 100000, vehicle?.price || 5000000)}
+              style={getBackgroundSize(
+                loanAmount,
+                100000,
+                vehicle?.price || 5000000
+              )}
               className="custom-red-slider"
             />
           </div>
 
-          {/* Interest Rate Slider (Down Payment ki jagah) */}
+          {/* Interest Rate */}
           <div>
             <div className="flex justify-between mb-4 text-sm font-semibold">
               <span className="text-gray-500">Interest Rate (P.A.):</span>
@@ -90,7 +96,7 @@ function EMICalculator({ vehicle }) {
             />
           </div>
 
-          {/* Tenure Slider */}
+          {/* Tenure */}
           <div>
             <div className="flex justify-between mb-4 text-sm font-semibold">
               <span className="text-gray-500">Loan Tenure:</span>
@@ -108,7 +114,7 @@ function EMICalculator({ vehicle }) {
             />
           </div>
 
-          {/* EMI Result Box */}
+          {/* EMI Box */}
           <div className="bg-[#FFF5F5] border border-red-100 rounded-xl p-6">
             <p className="text-[#EF4444] text-xs font-bold mb-1">
               Monthly EMI
@@ -121,46 +127,54 @@ function EMICalculator({ vehicle }) {
 
         {/* Chart Section */}
         <div className="flex flex-col items-center">
-          <div className="h-60 w-full relative lg:block hidden border-none">
-            <ResponsiveContainer width="100%" height="100%" >
-              <PieChart>
-                <Pie
-                  data={data}
-                  cx="50%"
-                  cy="100%"
-                  startAngle={180}
-                  endAngle={0}
-                  innerRadius={80}
-                  outerRadius={120}
-                  dataKey="value"
-                  stroke="none"
-                >
-                  {data.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index]} />
-                  ))}
-                </Pie>
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
+          {/* IMPORTANT: hidden first, then lg:block */}
+       <div className="w-full relative border-none hidden lg:block">
+  <ResponsiveContainer width="100%" aspect={2}>
+    <PieChart>
+      <Pie
+        data={data}
+        cx="50%"
+        cy="100%"
+        startAngle={180}
+        endAngle={0}
+        innerRadius={80}
+        outerRadius={120}
+        dataKey="value"
+        stroke="none"
+      >
+        {data.map((_, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index]} />
+        ))}
+      </Pie>
+    </PieChart>
+  </ResponsiveContainer>
+</div>
 
+
+          {/* Breakdown */}
           <div className="w-full space-y-4 mt-6">
             <h4 className="font-bold text-gray-800">Payment Breakdown</h4>
+
             <div className="flex justify-between text-sm">
               <span className="flex items-center gap-2 text-gray-500">
-                <div className="w-3 h-3 bg-[#FEE2E2] rounded"></div> Principal Amount
+                <div className="w-3 h-3 bg-[#FEE2E2] rounded"></div>
+                Principal Amount
               </span>
               <span className="font-bold text-gray-900">
                 ₹{principal.toLocaleString("en-IN")}
               </span>
             </div>
+
             <div className="flex justify-between text-sm">
               <span className="flex items-center gap-2 text-gray-500">
-                <div className="w-3 h-3 bg-[#EF4444] rounded"></div> Total Interest
+                <div className="w-3 h-3 bg-[#EF4444] rounded"></div>
+                Total Interest
               </span>
               <span className="font-bold text-gray-900">
                 ₹{totalInterest.toLocaleString("en-IN")}
               </span>
             </div>
+
             <div className="border-t pt-4 flex justify-between">
               <span className="font-bold text-gray-800">Total Payment</span>
               <span className="font-semibold text-gray-900 text-lg">
@@ -171,7 +185,8 @@ function EMICalculator({ vehicle }) {
         </div>
       </div>
 
-      <style jsx>{`
+      {/* Slider Styling */}
+      <style>{`
         .custom-red-slider {
           -webkit-appearance: none;
           width: 100%;
@@ -182,6 +197,7 @@ function EMICalculator({ vehicle }) {
           background-repeat: no-repeat;
           outline: none;
         }
+
         .custom-red-slider::-webkit-slider-thumb {
           -webkit-appearance: none;
           height: 20px;

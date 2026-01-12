@@ -12,7 +12,6 @@ function HeroSection() {
         src={imageDesk}
         alt=""
         loading="eager"
-        fetchpriority="high"
         className="absolute inset-0 lg:h-[90vh] h-[70vh] w-full object-cover md:block hidden"
       />
 
@@ -21,7 +20,7 @@ function HeroSection() {
         src={ImageMob}
         alt=""
         loading="eager"
-        fetchpriority="high"
+
         className="absolute inset-0 h-[70vh] w-full object-cover md:hidden block"
       />
 
